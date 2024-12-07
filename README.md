@@ -45,7 +45,7 @@ root/
         ├── train/
         ├── test/
         └── val/
-###Usage Instructions
+## Usage Instructions
 Run the following files in order to train the model and generate the results:
 
 city.py
