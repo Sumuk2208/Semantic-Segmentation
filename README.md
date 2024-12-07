@@ -13,15 +13,4 @@ Project Structure
 To run this project, you will need to download the Cityscapes dataset from Cityscapes Dataset.
 
 The required data structure is as follows:
-root/
-│
-└── data/
-    ├── leftImg8bit/
-    │   ├── train/
-    │   ├── test/
-    │   └── val/
-    │
-    └── GTFine/
-        ├── train/
-        ├── test/
-        └── val/
+root/ │ └── data/ ├── leftImg8bit/ │ ├── train/ │ ├── test/ │ └── val/ │ └── GTFine/ ├── train/ ├── test/ └── val/
