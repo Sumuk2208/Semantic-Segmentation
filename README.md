@@ -2,6 +2,8 @@
 
 ## Description
 This project focuses on training a UNet model with a ResNet encoder on the Cityscapes dataset. The dataset contains urban street scenes with multiple classes, which will be used to perform semantic segmentation tasks, helping to identify and label each pixel in the image based on predefined classes.
+We then later test the model on a set if images from a completely different dataset to determine how accuarte the model is able to predict the classes on an urban street on the go.
+
 ### Python Libraries
 
 - **torch**: The core package for deep learning using PyTorch, which provides tensor computations and deep learning functionality.
