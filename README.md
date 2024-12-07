@@ -45,4 +45,13 @@ root/
         ├── train/
         ├── test/
         └── val/
+##Usage Instructions
+Run the following files in order to train the model and generate the results:
+
+city.py
+test.py
+camvid_test.py
+generate_image.py
+create_video.py
+merge_video.py
 
