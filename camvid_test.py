@@ -1,3 +1,8 @@
+"""
+File: process_camvid_images.py
+Description: Script for processing CamVid validation images using a trained segmentation model. 
+             The script resizes images, applies transformations, and generates predicted segmentation masks.
+"""
 from city import OurModel, MyClass, transforms, transform, decode_segmap, encode_segmap
 import os
 from matplotlib import pyplot as plt
@@ -28,6 +33,16 @@ output_dir = 'results_camvid'  # Directory where results will be saved
 os.makedirs(output_dir, exist_ok=True)
 
 def resize_image(image, target_size):
+    """
+    Resize the given image to the specified target size using LANCZOS resampling.
+
+    Args:
+        image (PIL.Image.Image): The input image.
+        target_size (tuple): The desired width and height as (width, height).
+
+    Returns:
+        PIL.Image.Image: The resized image.
+    """
     return image.resize(target_size, Image.Resampling.LANCZOS)
 
 
