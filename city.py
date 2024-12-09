@@ -1,3 +1,18 @@
+"""
+File: cityscapes_segmentation.py
+Description: Semantic segmentation pipeline using Cityscapes dataset with U-Net and PyTorch Lightning.
+
+Dependencies:
+    - torch
+    - torchvision
+    - albumentations
+    - pytorch_lightning
+    - segmentation_models_pytorch
+    - matplotlib
+    - PIL
+    - numpy
+    - torchmetrics
+"""
 from torchvision.datasets import Cityscapes
 from typing import Any, Callable, Dict, List, Optional, Union, Tuple
 import albumentations as A
@@ -45,6 +60,7 @@ colors = [   [  0,   0,   0],
 
 label_colours = dict(zip(range(n_classes), colors))
 def encode_segmap(mask):
+    """Encodes the segmentation mask, removing unwanted classes."""
     #remove unwanted classes and recitify the labels of wanted classes
     for _voidc in void_classes:
         mask[mask == _voidc] = ignore_index
@@ -103,7 +119,7 @@ res=encode_segmap(seg.clone())
 print(res.shape)
 print(torch.unique(res))
 print(len(torch.unique(res)))
-#let do coloring
+
 res1=decode_segmap(res.clone())
 from pytorch_lightning import seed_everything, LightningModule, Trainer
 import multiprocessing
