@@ -1,7 +1,25 @@
+"""
+Script Name: Apply Bilateral Filter to Images in Directory
+Description:
+    This script reads image files from a specified input directory, applies
+    a bilateral filter to each image, and saves the filtered images to an
+    output directory. The bilateral filter helps in reducing noise while
+    preserving edges.
+
+Dependencies:
+    - OpenCV (cv2): For image reading, filtering, and writing.
+    - OS module: For directory and file management.
+
+Parameters:
+    - `d` (int): Diameter of each pixel neighborhood.
+    - `sigma_color` (float): Filter sigma in the color space.
+    - `sigma_space` (float): Filter sigma in the coordinate space.
+"""
 import cv2
 import os
 
 def apply_bilateral_filter_to_directory(input_directory, output_directory, d=9, sigma_color=75, sigma_space=75):
+    """Applies a bilateral filter to all images in the input directory and saves the results to the output directory."""
     # Get all image files in the input directory
     image_files = [f for f in os.listdir(input_directory) if f.endswith(('.png', '.jpg', '.jpeg'))]
 
