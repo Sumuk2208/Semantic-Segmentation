@@ -1,3 +1,8 @@
+"""
+This script combines two video files side by side and saves the resulting video. 
+If the combined video is shorter than the specified target duration.
+The output is saved in a specified directory.
+"""
 import os
 from moviepy.editor import VideoFileClip, clips_array, ColorClip
 
